@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Community Connect - Volunteers</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; }
-        h1 { color: #2c3e50; }
-        ul { list-style-type: none; padding: 0; }
-        li { padding: 6px 0; border-bottom: 1px solid #ddd; }
-    </style>
+    <title>Volunteers</title>
 </head>
 <body>
-    <h1>Volunteer List</h1>
+    <h1>Volunteers</h1>
+    <a href="/volunteer/new">Add New Volunteer</a>
     <ul>
         {% for v in volunteers %}
-            <li>{{ v['firstName'] }} {{ v['lastName'] }} - {{ v['email'] }}</li>
+            <li>
+                {{ v['firstName'] }} {{ v['lastName'] }} - {{ v['email'] }} - {{ v['phoneNumber'] }}
+                <a href="/volunteer/update/{{ v['volunteerID'] }}">Update Phone</a>
+            </li>
         {% else %}
             <li>No volunteers found.</li>
         {% endfor %}
     </ul>
+    <a href="/organisations">View Organisations</a> | <a href="/events">View Events</a>
 </body>
 </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Volunteer</title>
+</head>
+<body>
+    <h1>Add New Volunteer</h1>
+    <form method="POST">
+        First Name: <input type="text" name="firstName" required><br>
+        Last Name: <input type="text" name="lastName" required><br>
+        Email: <input type="email" name="email" required><br>
+        Phone: <input type="text" name="phoneNumber"><br>
+        Availability: <input type="text" name="availability"><br>
+        Location: <input type="text" name="location"><br>
+        Join Date: <input type="date" name="joinDate"><br>
+        Organisation:
+        <select name="organisationID">
+            {% for org in organisations %}
+                <option value="{{ org['organisationID'] }}">{{ org['name'] }}</option>
+            {% endfor %}
+        </select><br>
+        <button type="submit">Add Volunteer</button>
+    </form>
+    <a href="/">Back</a>
+</body>
+</html>

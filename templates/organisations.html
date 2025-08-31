@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Organisations</title>
+</head>
+<body>
+    <h1>Organisations</h1>
+    <ul>
+        {% for org in organisations %}
+            <li>
+                {{ org['name'] }} - {{ org['contactEmail'] }} - {{ org['phoneNumber'] }}
+            </li>
+        {% else %}
+            <li>No organisations found.</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back</a>
+</body>
+</html>
