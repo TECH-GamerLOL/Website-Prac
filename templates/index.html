@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Community Connect - Volunteers</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h1 { color: #2c3e50; }
+        ul { list-style-type: none; padding: 0; }
+        li { padding: 6px 0; border-bottom: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <h1>Volunteer List</h1>
+    <ul>
+        {% for v in volunteers %}
+            <li>{{ v['firstName'] }} {{ v['lastName'] }} - {{ v['email'] }}</li>
+        {% else %}
+            <li>No volunteers found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
